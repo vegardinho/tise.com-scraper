@@ -30,7 +30,7 @@ def get_attrs(ad_element, ad_dict, search):
     date_created = arrow.get((ad_element["createdAt"])).format('DD.MM.YYYY')
     price = ad_element["price"]
     seller = ad_element["userFullName"]
-    href = ad_element["buttons"][0]["universalLink"]
+    href = ad_element["buttons"][0]["universalLink"][:-4]
     description = ad_element["caption"]
     subtitle = ad_element["spec1"]
     address = ad_element["posName"]
