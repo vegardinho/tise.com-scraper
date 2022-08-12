@@ -35,6 +35,12 @@ def get_attrs(ad_element, ad_dict, search):
     subtitle = ad_element["spec1"]
     address = ad_element["posName"]
 
+    ignore = ['ønsker', 'ønsket', 'ønskes']
+    for e in ignore:
+        if e in subtitle.lower():
+            return ad_dict
+
+
     ad_dict[ad_id] = dict(
         href=href,
         title=title,
